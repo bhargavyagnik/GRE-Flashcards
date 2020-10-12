@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>Vocabulary</title>
     <script type = "text/javascript"
             src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
@@ -46,13 +47,13 @@
         x=esContent.textContent.length+syContent.textContent.length;
         console.log(x)
         if(x<50){
-            document.getElementById('test').style.fontSize="1.75em";
+            document.getElementById('test').style.fontSize="1.15em";
         }
         else if(x>50 && x<125){
-            document.getElementById('test').style.fontSize="1.5em";
+            document.getElementById('test').style.fontSize="1.15em";
         }
         else if(x>125 && x<150){
-            document.getElementById('test').style.fontSize="1.35em";
+            document.getElementById('test').style.fontSize="1em";
         }
         else if(x>125 && x<175){
             document.getElementById('test').style.fontSize="1em";
@@ -123,15 +124,7 @@
         border-radius: 1em;
         text-align: justify;
     }
-    @media only screen and (max-width: 768px) {
-        .flip-container {
-            margin: 10vh auto;
-        }
-        .flip-container, .front, .back {
-            width: 80vw;
-            height: 80vh;
-        }
-    }
+
     .front {
         text-align: center;
         padding: calc(50% - .5em) 1em 0 1em;
@@ -201,7 +194,7 @@
     }
     .refresh {
         display: block;
-        margin: -1.5em auto 0 auto;
+        margin: 1.5em auto 0 auto;
         width: 50vw;
         max-width: 8em;
         height: 1.5em;
@@ -214,7 +207,28 @@
         cursor: pointer;
         outline: none;
     }
-
+    .counter{
+        position: absolute;
+        left: 2vh;
+        top: 40%;
+        z-index: 5;
+        font-size: 3em;
+        font-weight: bolder;
+        color: white;
+    }
+    @media only screen and (max-width: 1000px) {
+        .flip-container {
+            margin: 10vh auto;
+        }
+        .flip-container, .front, .back {
+            width: 80vw;
+            height: 80vh;
+        }
+        .counter{
+            top:92%;
+            left:30%;
+        }
+    }
 </style>
 <body>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
@@ -234,6 +248,6 @@
 </div>
 
 <button class="refresh"> > </button>
-<div id="result" style="position: absolute;left: 2vh;top: 40%; z-index: 5;font-size: 3em;font-weight: bolder;color: white"></div>
+<div class="counter" id="result"></div>
 </body>
 </html>
