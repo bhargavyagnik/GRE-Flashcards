@@ -17,6 +17,7 @@
     var enContent = document.getElementById('flashcard--content_en');
     var esContent = document.getElementById('flashcard--content_es');
     var syContent = document.getElementById('flashcard--content_sy');
+    var eContent = document.getElementById('flashcard--content_e');
 
 
     document.addEventListener('DOMContentLoaded', function(){
@@ -42,6 +43,7 @@
         //var randomNum= localStorage.clickcount;
         clickCounter();
         enContent.textContent = vocabWords.Word[randomNum];
+        eContent.textContent = vocabWords.Word[randomNum];
         esContent.textContent = vocabWords.Meaning[randomNum].replace(/[.\/#!$%\^&\*;:{}=\-_`~()'"\]\[]/g,"");
         syContent.textContent = vocabWords.Synonym[randomNum].replace(/[.\/#!$%\^&\*;:{}=\-_`~()'"\]\[]/g,"");
         x=esContent.textContent.length+syContent.textContent.length;
@@ -216,13 +218,13 @@
         font-weight: bolder;
         color: white;
     }
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 1500px) {
         .flip-container {
             margin: 10vh auto;
         }
         .flip-container, .front, .back {
             width: 80vw;
-            height: 80vh;
+            height: 60vh;
         }
         .counter{
             top:92%;
@@ -239,6 +241,7 @@
             <span id="flashcard--content_en">Ready</span>
         </div>
         <div class="back" id="test">
+            <span id="flashcard--content_e" style="font-weight: bolder;font-size:1.5em"></span>
             <h3>Meaning</h3>
             <span id="flashcard--content_es"></span>
             <h3>Synonym</h3>
